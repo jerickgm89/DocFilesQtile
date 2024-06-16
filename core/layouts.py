@@ -4,7 +4,7 @@ from utils.match import title, wm_class
 from utils.palette import palette
 
 config = {
-    "border_focus": palette.pink,
+    "border_focus": palette.sapphire,
     "border_normal": palette.base,
     "border_width": 0,
     "margin": 10,

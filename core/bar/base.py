@@ -9,7 +9,7 @@ from utils.config import cfg
 
 defaults = {
     "font": "Hasklug Nerd Font Mono Medium",
-    "fontsize": 11,
+    "fontsize": 15,
     "padding": None,
 }
 
@@ -48,7 +48,7 @@ def base(bg: str | None, fg: str) -> dict:
     }
 
 
-def symbol(size=16) -> dict:
+def symbol(size=20) -> dict:
     font = "Symbols Nerd Font Mono Regular"
     return {"font": font, "fontsize": size}
 

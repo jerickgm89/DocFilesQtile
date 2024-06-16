@@ -17,20 +17,24 @@ if not cfg.term:
 
 keys = [Key(*key) for key in [  # type: ignore
     # switch between windows
-    ([mod], "h", lazy.layout.left()),
-    ([mod], "n", lazy.layout.down()),
-    ([mod], "e", lazy.layout.up()),
-    ([mod], "i", lazy.layout.right()),
+    ([mod], "h", lazy.layout.left()), 
+    ([mod], "j", lazy.layout.down()), 
+    ([mod], "k", lazy.layout.up()),
+    ([mod], "l", lazy.layout.right()),
 
     # move windows between columns
     ([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    ([mod, "shift"], "n", lazy.layout.shuffle_down()),
-    ([mod, "shift"], "e", lazy.layout.shuffle_up()),
-    ([mod, "shift"], "i", lazy.layout.shuffle_right()),
+    ([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    ([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "l", lazy.layout.shuffle_right()),
+
+    # Switch focus of monitors
+    ([mod], "period", lazy.next_screen()),
+    ([mod], "comma", lazy.prev_screen()),
 
     # increase/decrease window size
-    ([mod], "u", lazy.layout.shrink()),
-    ([mod], "y", lazy.layout.grow()),
+    ([mod], "minus", lazy.layout.shrink()),
+    ([mod], "equal", lazy.layout.grow()),
 
     # window management
     ([mod, "shift"], "space", lazy.layout.flip()),
@@ -63,7 +67,7 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod], "b", lazy.spawn(cfg.browser)),
 
     # screenshot tool
-    ([], "Print", lazy.spawn("gnome-screenshot -i")),
+    ([], "Print", lazy.spawn("flameshot gui")),
 
     # backlight
     ([mod], "XF86AudioLowerVolume", lazy.spawn("brightnessctl set 5%-")),
@@ -78,4 +82,7 @@ keys = [Key(*key) for key in [  # type: ignore
     ([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     ([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     ([], "XF86AudioNext", lazy.spawn("playerctl next")),
+
+    # Apagar y reiniciar
+    ([mod, "control"], "Escape", lazy.spawn("poweroff"))
 ]]  # fmt: skip

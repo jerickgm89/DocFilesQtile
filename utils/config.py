@@ -7,11 +7,12 @@ from os.path import exists, expanduser, join
 @dataclass
 class Config:
     bar: str = "shapes"
-    bar2: str = ""
-    browser: str = ""
-    term: str | None = ""
+    bar2: str = "shapes"
+    browser: str = "google-chrome-stable"
+    flameshot: str = "flameshot gui"
+    term: str | None = "alacritty"
     term2: str = ""
-    wallpaper: str = ""
+    wallpaper: str = "~/Pictures/Wallpapers/atardecer.jpg"
 
     @property
     def is_xephyr(self):
