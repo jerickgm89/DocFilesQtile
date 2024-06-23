@@ -63,6 +63,13 @@ keys = [Key(*key) for key in [  # type: ignore
     ([mod, "shift"], "r", lazy.spawn("rofi -show window")),
     ([mod], "r", lazy.spawn("rofi -show drun")),
 
+    # cambiar teclados
+    #us -v basic
+    ([mod, "shift"], "k", lazy.spawn("setxkbmap us -v basic -option grp:alt_shift_toggle")),
+    # us -v dvorak
+    ([mod], "k", lazy.spawn("setxkbmap us -v dvorak -option grp:alt_shift_toggle")),
+
+
     # web browser
     ([mod], "b", lazy.spawn(cfg.browser)),
 
